@@ -1,8 +1,60 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #222222;
 }
 
 a {
   text-decoration: none;
+}
+
+body {
+  width: 1140px;
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+.categories__banner__1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.categories__banner__2 {
+  grid-row-start: 3;
+}
+.categories__banner__3 {
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+.categories__banner__4 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products__container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
 }/*# sourceMappingURL=style.css.map */
