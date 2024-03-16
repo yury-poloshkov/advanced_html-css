@@ -20,10 +20,60 @@ body {
 
 .header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   padding: 20px 0;
+}
+.header__top {
+  display: flex;
+  width: 1140px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__top__right_block, .header__top__left_block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+}
+.header__main_menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.slider {
+  width: 1600px;
+  min-height: 665px;
+  background-image: url(../img/slider_background.png);
+  align-items: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+.slider__title {
+  display: grid;
+  grid-template-columns: 20px auto;
+  grid-template-rows: repeat(2, 1fr);
+  position: absolute;
+  top: 250px;
+  left: 230px;
+}
+.slider__logo {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.slider__slogan, .slider__subslogan {
+  line-height: 1em;
+  line-height-step: 0em;
+}
+.slider__subslogan span {
+  color: #f16d7f;
 }
 
 .categories {

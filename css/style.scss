@@ -22,10 +22,70 @@ body {
 
 .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
+    // width: 100%;
     align-items: center;
     padding: 20px 0;
+
+    &__top {
+        display: flex;
+        width: $siteWidth;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        &__right_block,
+        &__left_block {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: $gaps;
+        }
+    }
+
+    &__main_menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: $gaps *2;
+    }
+}
+
+.slider {
+    width: calc($siteWidth + $additionalVerge*2);
+    min-height: 665px;
+    background-image: url(../img/slider_background.png);
+    align-items: center;
+    position: relative;
+    margin-bottom: $gaps*3;
+
+    &__title {
+        display: grid;
+        grid-template-columns: 20px auto;
+        grid-template-rows: repeat(2, 1fr);
+        position: absolute;
+        top: 250px;
+        left: $additionalVerge;
+    }
+
+    &__logo {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    &__slogan,
+    &__subslogan {
+        line-height: 1em;
+        line-height-step: 0em;
+    }
+
+    &__subslogan span {
+        color: $textColorAlternative;
+    }
 }
 
 .categories {
