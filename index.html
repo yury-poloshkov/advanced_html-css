@@ -23,29 +23,36 @@
                 <div class="header__slogan">
                     BRAN<span>D</span>
                 </div>
-                <details class="header__drop_menu">
-                    <h5 class="header__drop_menu__group">WOMEN</h5>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <h5 class="header__drop_menu__group">MEN</h5>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                    <li class="header__drop_menu__item"></li>
-                </details>
                 <form action="" class="header__search">
-                    <input type="text" class="header__search__box" placeholder="Search for item...">
-                    <button type="submit" class="header__search__button"><img src="./img/search_logo.png" alt=""
-                            class="header__search__button__logo"></button>
+                    <details class="header__drop_menu">
+                        <summary class="header__drop_menu__summary">Browse &nbsp;<img src="./img/arrow_down_black.png"
+                                alt="">
+                        </summary>
+                        <h5 class="header__drop_menu__group">WOMEN</h5>
+                        <hr>
+                        <a href="#" class="header__drop_menu__link">Dresses</a>
+                        <a href="#" class="header__drop_menu__link">Tops</a>
+                        <a href="#" class="header__drop_menu__link">Sweaters/Knits</a>
+                        <a href="#" class="header__drop_menu__link">Jackets/Coats</a>
+                        <a href="#" class="header__drop_menu__link">Blazers</a>
+                        <a href="#" class="header__drop_menu__link">Denim</a>
+                        <a href="#" class="header__drop_menu__link">Leggings/Pants</a>
+                        <a href="#" class="header__drop_menu__link">Skirts/Shorts</a>
+                        <a href="#" class="header__drop_menu__link">Accessories</a>
+                        <h5 class="header__drop_menu__group">MEN</h5>
+                        <hr>
+                        <a href="#" class="header__drop_menu__link">Tees/Tank tops</a>
+                        <a href="#" class="header__drop_menu__link">Shirts/Polos</a>
+                        <a href="#" class="header__drop_menu__link">Sweaters</a>
+                        <a href="#" class="header__drop_menu__link">Sweatshirts/Hoodies</a>
+                        <a href="#" class="header__drop_menu__link">Blazers</a>
+                        <a href="#" class="header__drop_menu__link">Jackets/vests</a>
+                    </details>
+                    <div class="header__search__container">
+                        <input type="text" class="header__search__box" placeholder="Search for item...">
+                        <button type="submit" class="header__search__button"><img src="./img/search_logo.png" alt=""
+                                class="header__search__button__logo"></button>
+                    </div>
                 </form>
             </div>
             <div class="header__top__right_block">
@@ -54,6 +61,7 @@
                 </a>
                 <button class="header__account-button">
                     My Account
+                    <img src="./img/arrow_down.png" alt="" class="header__account-button_arrow-down">
                 </button>
             </div>
         </div>
@@ -80,40 +88,50 @@
     </div>
     <div class="categories">
         <article class="categories__banner__1">
+
             <img src="./img/banner1.png" alt="">
-            <h4 class="categories__banner__title">
-                HOT DEAL
-            </h4>
-            <h3 class="categories__banner_category">
-                FOR MEN
-            </h3>
+            <div class="categories__banner__description">
+                <h4 class="categories__banner__title">
+                    HOT DEAL
+                </h4>
+                <h3 class="categories__banner__category">
+                    FOR MEN
+                </h3>
+            </div>
         </article>
         <article class="categories__banner__2">
             <img src="./img/banner2.png" alt="">
-            <h4 class="categories__banner__title">
-                LUXIROUS & trendy
-            </h4>
-            <h3 class="categories__banner_category">
-                ACCESORIES
-            </h3>
+            <div class="categories__banner__description">
+                <h4 class="categories__banner__title">
+                    LUXIROUS & TRENDY
+                </h4>
+                <h3 class="categories__banner__category">
+                    ACCESORIES
+                </h3>
+            </div>
         </article>
         <article class="categories__banner__3">
             <img src="./img/banner3.png" alt="">
-            <h4 class="categories__banner__title">
-                30% OFFER
-            </h4>
-            <h3 class="categories__banner_category">
-                WOMEN
-            </h3>
+            <div class="categories__banner__description">
+                <h4 class="categories__banner__title">
+                    30% OFFER
+                </h4>
+                <h3 class="categories__banner__category">
+                    WOMEN
+                </h3>
+            </div>
         </article>
         <article class="categories__banner__4">
             <img src="./img/banner4.png" alt="">
-            <h4 class="categories__banner__title">
-                NEW ARRIVALS
-            </h4>
-            <h3 class="categories__banner_category">
-                FOR KIDS
-            </h3>
+            <div class="categories__banner__description">
+
+                <h4 class="categories__banner__title">
+                    NEW ARRIVALS
+                </h4>
+                <h3 class="categories__banner__category">
+                    FOR KIDS
+                </h3>
+            </div>
         </article>
     </div>
     <section class="products">
@@ -177,34 +195,135 @@
                 <a href="#" class="products__product__price">$52.00</a>
             </article>
         </div>
-        <button class="products__catalogue">Browse All Products</button>
+        <button class="products__catalogue">
+            Browse All Products
+            <img src="./img/arrow_right.png" alt="">
+        </button>
 
     </section>
     <div class="feature">
         <div class="feature__banner">
-
+            <img src="./img/features_banner_shadow.png" alt="" class="feature__banner__shadow">
+            <div class="feature__banner__slogan">
+                <h2 class="feature__banner__title">
+                    30% <span>OFFER</span>
+                </h2>
+                <h3 class="feature__banner__description">
+                    FOR WOMEN
+                </h3>
+            </div>
         </div>
-        <article class="feature__box">
-            <img src="" alt="" class="feature__box__logo">
-            <h4 class="feature__box__title"></h4>
-            <p class="feature__box__description"></p>
-        </article>
-        <article class="feature__box">
-            <img src="" alt="" class="feature__box__logo">
-            <h4 class="feature__box__title"></h4>
-            <p class="feature__box__description"></p>
-        </article>
-        <article class="feature__box">
-            <img src="" alt="" class="feature__box__logo">
-            <h4 class="feature__box__title"></h4>
-            <p class="feature__box__description"></p>
-        </article>
+        <div class="feature__boxes">
+            <article class="feature__box">
+                <img src="./img/feature_1.png" alt="" class="feature__box__logo">
+                <h4 class="feature__box__title">Free Delivery</h4>
+                <p class="feature__box__description">Worldwide delivery on all. Authorit tively morph next-generation
+                    innov tion with extensive models.</p>
+            </article>
+            <article class="feature__box">
+                <img src="./img/feature_2.png" alt="" class="feature__box__logo">
+                <h4 class="feature__box__title">Sales & discounts</h4>
+                <p class="feature__box__description">Worldwide delivery on all. Authorit tively morph next-generation
+                    innov tion with extensive models.</p>
+            </article>
+            <article class="feature__box">
+                <img src="./img/feature_3.png" alt="" class="feature__box__logo">
+                <h4 class="feature__box__title">Quality assurance</h4>
+                <p class="feature__box__description">Worldwide delivery on all. Authorit tively morph next-generation
+                    innov tion with extensive models.</p>
+            </article>
+        </div>
     </div>
     <div class="subscriber">
+        <div class="subscriber__teaser">
+            <img src="./img/subscribe_manager.png" alt="" class="subscriber__teaser__manager">
+            <article class="subscriber__teaser__text">
+                <p class="subscriber__teaser__slogan">&quot;Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                    a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium&quot;</p>
 
+                <p class="subscriber__teaser__signature">Bin Burhan <br>
+                    <span>Dhaka, Bd</span>
+                </p>
+            </article>
+        </div>
+        <form action="#" class="subscriber__form">
+            <h5 class="subscriber__form__title">SUBSCRIBE<br><span>FOR OUR NEWLETTER AND PROMOTION</span>
+            </h5>
+            <div class="subscriber__form__email_fields">
+                <input class="subscriber__form__email_field" type="email" placeholder="Enter Your Email">
+                <button class="subscriber__form__email_button" type="submit">Subscribe</button>
+            </div>
+        </form>
     </div>
     <footer class="footer">
-
+        <div class="footer__menu">
+            <div class="footer__menu__logo_container footer__menu__grid_element_1">
+                <div class="header__logo">
+                    <img src="./img/main_logo.png" alt="">
+                </div>
+                <div class="header__slogan">
+                    BRAN<span>D</span>
+                </div>
+            </div>
+            <p class="footer__menu__description footer__menu__grid_element_2">
+                Objectively transition extensive data rather than cross functional
+                solutions. Monotonectally syndicate multidisciplinary
+                materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and
+                cross-unit partnerships.
+                <br><br>
+                Efficiently plagiarize 24/365 action items and focused infomediaries.
+                Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+                <br><br>
+                Objectively strategize seamless relationships via resource sucking testing procedures. Proactively
+                cultivate
+                next-generation results for value-added methodologies. Dynamically plagiarize unique methodologies after
+                performance
+                based methodologies. Monotonectally empower stand-alone mindshare rather than ubiquitous opportunities.
+                Dynamically
+                orchestrate resource sucking scenarios after alternative synergy.
+                <br><br>
+                Compellingly envisioneer corporate methods of empowerment before standards compliant technologies.
+                Objectively
+                facilitate progressive.
+            </p>
+            <p class="footer__menu__sections footer__menu__grid_element_3">COMPANY</p>
+            <p class="footer__menu__links footer__menu__grid_element_4">
+                <a href="" class="footer__menu__link">Home</a>
+                <a href="" class="footer__menu__link">Shop</a>
+                <a href="" class="footer__menu__link">About</a>
+                <a href="" class="footer__menu__link">How It Works</a>
+                <a href="" class="footer__menu__link">Contact</a>
+            </p>
+            <p class="footer__menu__sections footer__menu__grid_element_5">INFORMATION</p>
+            <p class="footer__menu__links footer__menu__grid_element_6">
+                <a href="" class="footer__menu__link">Tearms & Condition</a>
+                <a href="" class="footer__menu__link">Privacy Policy</a>
+                <a href="" class="footer__menu__link">How to Buy</a>
+                <a href="" class="footer__menu__link">How to Sell</a>
+                <a href="" class="footer__menu__link">Promotion</a>
+            </p>
+            <p class="footer__menu__sections footer__menu__grid_element_7">SHOP CATEGORY</p>
+            <p class="footer__menu__links footer__menu__grid_element_8">
+                <a href="" class="footer__menu__link">Men</a>
+                <a href="" class="footer__menu__link">Women</a>
+                <a href="" class="footer__menu__link">Child</a>
+                <a href="" class="footer__menu__link">Apparel</a>
+                <a href="" class="footer__menu__link">Brows All</a>
+            </p>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__bottom__copyright">
+                © 2017 Brand All Rights Reserved.
+            </p>
+            <div class="footer__bottom__socials">
+                <a href="" class="footer__bottom__socials__link"><img src="./img/soc_fb.png" alt=""></a>
+                <a href="" class="footer__bottom__socials__link"><img src="./img/soc_twitter.png" alt=""></a>
+                <a href="" class="footer__bottom__socials__link"><img src="./img/soc_in.png" alt=""></a>
+                <a href="" class="footer__bottom__socials__link"><img src="./img/soc_p.png" alt=""></a>
+                <a href="https://www.google.com/" class="footer__bottom__socials__link"><img src="./img/soc_google.png"
+                        alt=""></a>
+            </div>
+        </div>
     </footer>
 </body>
 

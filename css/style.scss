@@ -1,4 +1,6 @@
 @import 'vars';
+@import 'extends';
+@import 'mixins';
 
 * {
     padding: 0;
@@ -12,79 +14,158 @@ a {
 }
 
 body {
-    width: $siteWidth;
-    padding-left: calc(50% - $siteWidth/2);
-    padding-right: calc(50% - $siteWidth/2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @extend %center;
+    @extend %flex-column-center;
+    overflow-x: hidden;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    // width: 100%;
-    align-items: center;
-    padding: 20px 0;
+    @extend %flex-column-center;
+    padding: 25px 0;
+    gap: $gaps;
 
     &__top {
-        display: flex;
-        width: $siteWidth;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
+        @extend %flex-row-center;
         justify-content: space-between;
+        width: $siteWidth;
 
         &__right_block,
         &__left_block {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
+            @extend %flex-row-center;
             gap: $gaps;
         }
     }
 
+    &__slogan {
+        font-size: 27px;
+        font-weight: 300;
+    }
+
+    &__slogan span {
+        color: $textColorAlternative;
+        font-weight: 900;
+    }
+
+    &__search {
+        @extend %flex-row-center;
+        position: relative;
+
+        &__container {
+            @extend %flex-row-center;
+            position: absolute;
+            left: 89px;
+        }
+
+        &__box {
+            width: 317px;
+            height: 38px;
+            background-color: #ffffff;
+            border: 1px solid #e6e6e6;
+            padding-left: 16px;
+        }
+
+        &__box:focus {
+            outline: none;
+        }
+
+        &__button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e6e6e6;
+            border-radius: 0px 3px 3px 0px;
+            background-color: #e6e6e6
+        }
+
+        &__button:hover {
+            background-color: $textColorAlternative;
+            border: $textColorAlternative;
+        }
+    }
+
+    &__drop_menu {
+        @extend %flex-column-center;
+        gap: $gaps;
+        position: absolute;
+        align-self: start;
+        // justify-content: left;
+        z-index: 1;
+        top: -20px;
+        background-color: #ffffff;
+
+        &__summary {
+            width: 87px;
+            height: 38px;
+            font-size: 14px;
+            font-weight: 300;
+            background-color: #cdcdcc;
+            background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
+            border: 1px solid #e6e6e6;
+            border-radius: 3px 0px 0px 3px;
+            cursor: pointer;
+            list-style: none;
+            @extend %flex-row-center;
+            justify-content: center;
+        }
+
+        &__group {
+            padding: $gaps/4;
+        }
+
+        &__link {
+            padding: $gaps/4 + 4px;
+        }
+    }
+
     &__main_menu {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
+        @extend %flex-row-center;
         gap: $gaps *2;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    &__account-button {
+        background-color: $textColorAlternative;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 10px 10px 20px;
+        color: $textColorReserve;
+        border: 0;
+        @extend %flex-row-center;
+        gap: $gaps/2;
     }
 }
 
 .slider {
-    width: calc($siteWidth + $additionalVerge*2);
-    min-height: 665px;
-    background-image: url(../img/slider_background.png);
-    align-items: center;
-    position: relative;
+    @include broadSite($maxWidth, 665px, '../img/slider_background.png');
     margin-bottom: $gaps*3;
 
     &__title {
         display: grid;
         grid-template-columns: 20px auto;
-        grid-template-rows: repeat(2, 1fr);
-        position: absolute;
-        top: 250px;
-        left: $additionalVerge;
+        grid-template-rows: 60px 40px;
+        padding-top: 250px;
+        padding-left: $additionalVerge;
     }
 
     &__logo {
         grid-row-start: 1;
         grid-row-end: 3;
+        min-height: 100px;
     }
 
     &__slogan,
     &__subslogan {
-        line-height: 1em;
-        line-height-step: 0em;
+        font-size: 60px;
+        font-weight: 900;
+    }
+
+    &__subslogan {
+        font-size: 40px;
     }
 
     &__subslogan span {
         color: $textColorAlternative;
+
     }
 }
 
@@ -93,8 +174,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: $gaps;
+    margin-bottom: $gaps*3;
 
     &__banner {
+
         &__1 {
             grid-row-start: 1;
             grid-row-end: 3;
@@ -113,17 +196,339 @@ body {
             grid-row-start: 2;
             grid-row-end: 4;
         }
+
+        &__1,
+        &__2,
+        &__3,
+        &__4 {
+            position: relative;
+        }
+
+        &__description {
+            position: absolute;
+            top: 32px;
+            background-color: $textColorReserve;
+            padding: 16px;
+        }
+
+        &__title {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        &__category {
+            font-size: 30px;
+            font-weight: 900;
+            color: $textColorAlternative;
+        }
     }
 }
 
 .products {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @extend %flex-column-center;
+    width: 100%;
+
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        padding-bottom: 10px;
+    }
+
+    &__slogan {
+        font-size: 14px;
+        font-weight: 400;
+        color: #9f9f9f;
+        padding-bottom: 40px;
+    }
 
     &__container {
+        width: 100%;
         display: grid;
         gap: $gaps;
         grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 40px;
+    }
+
+    &__product {
+        @extend %flex-column-center;
+        align-items: start;
+        width: 100%;
+
+        &__photo {
+            width: calc(($siteWidth - $gaps * 3) / 4);
+            height: 280px;
+        }
+
+        &__title {
+            font-size: 13px;
+            font-weight: 400;
+            padding: $gaps/2;
+        }
+
+        &__price {
+            font-size: 16px;
+            font-weight: 700;
+            color: $textColorAlternative;
+            padding: $gaps/2;
+        }
+
+    }
+
+    &__catalogue {
+        background-color: $textColorAlternative;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 10px 10px 20px;
+        color: $textColorReserve;
+        border: 0;
+        @extend %flex-row-center;
+        gap: $gaps/2;
+        margin-bottom: $gaps*3;
+    }
+}
+
+.feature {
+    width: $siteWidth;
+    @extend %flex-row-center;
+    margin-bottom: $gaps*3;
+
+    &__banner {
+        height: 530px;
+        width: 767px;
+        background-image: url(../img/features_background.png);
+        position: relative;
+
+        &__slogan {
+            position: absolute;
+            z-index: 1;
+            top: 15%;
+            left: 5%;
+        }
+
+        &__shadow {
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        &__title,
+        &__description {
+            font-size: 54px;
+            font-weight: 700;
+            color: $textColorReserve;
+        }
+
+        &__title span {
+            color: $textColorAlternative;
+        }
+
+        &__description {
+            font-size: 32px;
+        }
+    }
+
+    &__boxes {
+        height: 530px;
+        width: calc($siteWidth - 767px);
+        background-image: url(../img/features_box_background.png);
+    }
+
+    &__box {
+        max-height: calc((530px - $gaps*2*3)/3);
+        padding: $gaps*2;
+        display: grid;
+        grid-template-rows: 25% 75%;
+        grid-template-columns: 25% 75%;
+        gap: $gaps;
+
+        &__logo {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        &__title,
+        &__description {
+            color: $textColorReserve2;
+            grid-column-start: 2;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        &__description {
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+}
+
+.subscriber {
+    @include broadSite($maxWidth, 438px, '../img/photo_subscribe.jpg');
+    margin-bottom: $gaps*3;
+    @extend %flex-row-center;
+
+
+    &__teaser {
+        @extend %flex-row-center;
+        padding-left: $additionalVerge;
+        gap: $gaps;
+        width: $siteWidth/2;
+
+        &__text {
+            @extend %flex-column-center;
+            align-items: start;
+            gap: $gaps;
+        }
+
+        &__slogan {
+            font-size: 16px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        &__signature {
+            font-size: 16px;
+            font-weight: 700;
+            color: $textColorAlternative;
+        }
+
+        &__signature span {
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+
+    &__form {
+        @extend %flex-column-center;
+        gap: $gaps;
+        width: $siteWidth/2;
+
+        &__title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        &__title span {
+            font-size: 14px;
+        }
+
+        &__email_fields {
+            @extend %flex-row-center;
+
+        }
+
+        &__email_field {
+            width: 334px;
+            height: 46px;
+            background-color: #e1e1e1;
+            border-radius: 23px 0 0 23px;
+            border: 0;
+            padding-left: 24px;
+        }
+
+        &__email_field:focus {
+            outline-style: none;
+        }
+
+        &__email_button {
+            width: 104px;
+            height: 46px;
+            background-color: $textColorAlternative;
+            border-radius: 0px 23px 23px 0px;
+            border: none;
+            color: $textColorReserve;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}
+
+.footer {
+    @extend %flex-column-center;
+    gap: $gaps*3;
+
+    &__menu {
+        width: $siteWidth;
+        min-height: 200px;
+        display: grid;
+        grid-template-columns: 45% repeat(3, 1fr);
+        grid-template-rows: 40px 200px;
+        gap: $gaps*2;
+
+        &__logo_container {
+            @extend %flex-row-center;
+            gap: $gaps;
+        }
+
+        &__description {
+            overflow-y: scroll;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        &__sections {
+            @extend %flex-row-center;
+            font-size: 18px;
+            font-weight: 700;
+            color: $textColorAlternative;
+        }
+
+        &__links {
+            @extend %flex-column-center;
+            align-items: start;
+            justify-content: space-between;
+        }
+
+        &__link {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        &__grid_element_2 {
+            order: 4;
+        }
+
+        &__grid_element_4 {
+            order: 5;
+        }
+
+        &__grid_element_6 {
+            order: 7;
+        }
+
+        &__grid_element_8 {
+            order: 8;
+        }
+    }
+
+    &__bottom {
+        width: $maxWidth;
+        @extend %flex-row-center;
+        justify-content: space-between;
+        padding: $gaps 0;
+        background-color: #e6e6e6;
+
+        &__copyright,
+        &__socials {
+            font-size: 16px;
+            font-weight: 400;
+            padding: 0 $additionalVerge;
+        }
+
+        &__socials {
+            @extend %flex-row-center;
+            gap: $gaps/2;
+
+            &__link {
+                @extend %flex-row-center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                background-color: $textColorReserve;
+            }
+
+            &__link:hover {
+                background-color: $textColorAlternative;
+            }
+        }
     }
 }

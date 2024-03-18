@@ -1,5 +1,8 @@
 $siteWidth: 1140px;
-$additionalVerge: calc((1600px - $siteWidth)/2);
+$maxWidth: 1600px;
+$additionalVerge: calc(($maxWidth - $siteWidth)/2);
 $textColorMain: #222222;
 $textColorAlternative: #f16d7f;
+$textColorReserve: #ffffff;
+$textColorReserve2: #fbfbfb;
 $gaps: 20px;

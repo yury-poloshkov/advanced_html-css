@@ -1,0 +1,5 @@
+@mixin broadSite($mWidth, $mHeight, $mBackgroundPicture) {
+    width: $mWidth;
+    min-height: $mHeight;
+    background-image: url($mBackgroundPicture);
+}
