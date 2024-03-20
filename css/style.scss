@@ -13,6 +13,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: $textColorAlternative;
+}
+
 body {
     @extend %center;
     @extend %flex-column-center;
@@ -87,20 +91,21 @@ body {
         gap: $gaps;
         position: absolute;
         align-self: start;
-        // justify-content: left;
         z-index: 1;
         top: -20px;
         background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        border-radius: 3px 0px 0px 3px;
 
         &__summary {
             width: 87px;
             height: 38px;
             font-size: 14px;
-            font-weight: 300;
+            font-weight: 400;
             background-color: #cdcdcc;
             background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
-            border: 1px solid #e6e6e6;
-            border-radius: 3px 0px 0px 3px;
+            // border: 1px solid #e6e6e6;
+            // border-radius: 3px 0px 0px 3px;
             cursor: pointer;
             list-style: none;
             @extend %flex-row-center;
@@ -108,17 +113,19 @@ body {
         }
 
         &__group {
-            padding: $gaps/4;
+            margin: calc($gaps / 2);
+            border-bottom: 2px solid #cdcdcc;
         }
 
         &__link {
-            padding: $gaps/4 + 4px;
+            display: block;
+            padding: calc($gaps / 4 + 4px);
         }
     }
 
     &__main_menu {
         @extend %flex-row-center;
-        gap: $gaps *2;
+        gap: calc($gaps * 2);
         font-size: 14px;
         font-weight: 700;
     }
@@ -131,8 +138,115 @@ body {
         color: $textColorReserve;
         border: 0;
         @extend %flex-row-center;
-        gap: $gaps/2;
+        gap: calc($gaps / 2);
     }
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.menu-link {
+    text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+}
+
+.mega-box {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: auto;
+}
+
+.menu-headding {
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: #232323;
+    width: 235px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.mega-link {
+    display: block;
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #646464;
+    text-decoration: none;
+}
+
+.mega-link:hover {
+    color: #f16d7f;
+}
+
+.menu-item {
+    margin-right: 46px;
+}
+
+.menu-item:last-of-type {
+    margin-right: 0;
+}
+
+.menu-list {
+    position: relative;
+}
+
+.mega-box::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    position: absolute;
+    top: -6px;
+    left: 33px;
+    transform: rotate(45deg);
+    border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+}
+
+.menu-list:hover .mega-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 310px;
+    width: 846px;
+}
+
+.menu-baner {
+    width: 255px;
+    height: 118px;
+    background-color: #efefef;
+    margin: auto;
+}
+
+.last:hover .mega-box {
+    right: 0;
+    left: auto;
+}
+
+.last:hover .mega-box::before {
+    right: 50px;
+    left: auto;
 }
 
 .slider {
@@ -145,6 +259,7 @@ body {
         grid-template-rows: 60px 40px;
         padding-top: 250px;
         padding-left: $additionalVerge;
+        vertical-align: top;
     }
 
     &__logo {
@@ -153,14 +268,17 @@ body {
         min-height: 100px;
     }
 
-    &__slogan,
-    &__subslogan {
+    &__slogan {
         font-size: 60px;
         font-weight: 900;
+        line-height: calc(1/1.3);
     }
 
     &__subslogan {
         font-size: 40px;
+        font-weight: 900;
+        line-height: 1.3;
+
     }
 
     &__subslogan span {
@@ -262,14 +380,14 @@ body {
         &__title {
             font-size: 13px;
             font-weight: 400;
-            padding: $gaps/2;
+            padding: calc($gaps / 2);
         }
 
         &__price {
             font-size: 16px;
             font-weight: 700;
             color: $textColorAlternative;
-            padding: $gaps/2;
+            padding: calc($gaps / 2);
         }
 
     }
@@ -282,8 +400,8 @@ body {
         color: $textColorReserve;
         border: 0;
         @extend %flex-row-center;
-        gap: $gaps/2;
-        margin-bottom: $gaps*3;
+        gap: calc($gaps / 2);
+        margin-bottom: calc($gaps * 3);
     }
 }
 
@@ -334,7 +452,7 @@ body {
 
     &__box {
         max-height: calc((530px - $gaps*2*3)/3);
-        padding: $gaps*2;
+        padding: calc($gaps * 2);
         display: grid;
         grid-template-rows: 25% 75%;
         grid-template-columns: 25% 75%;
@@ -362,7 +480,7 @@ body {
 
 .subscriber {
     @include broadSite($maxWidth, 438px, '../img/photo_subscribe.jpg');
-    margin-bottom: $gaps*3;
+    margin-bottom: calc($gaps * 3);
     @extend %flex-row-center;
 
 
@@ -370,7 +488,7 @@ body {
         @extend %flex-row-center;
         padding-left: $additionalVerge;
         gap: $gaps;
-        width: $siteWidth/2;
+        width: calc($siteWidth / 2);
 
         &__text {
             @extend %flex-column-center;
@@ -399,7 +517,7 @@ body {
     &__form {
         @extend %flex-column-center;
         gap: $gaps;
-        width: $siteWidth/2;
+        width: calc($siteWidth / 2);
 
         &__title {
             text-align: center;
@@ -444,7 +562,7 @@ body {
 
 .footer {
     @extend %flex-column-center;
-    gap: $gaps*3;
+    gap: calc($gaps * 3);
 
     &__menu {
         width: $siteWidth;
@@ -452,7 +570,7 @@ body {
         display: grid;
         grid-template-columns: 45% repeat(3, 1fr);
         grid-template-rows: 40px 200px;
-        gap: $gaps*2;
+        gap: calc($gaps * 2);
 
         &__logo_container {
             @extend %flex-row-center;
@@ -516,7 +634,7 @@ body {
 
         &__socials {
             @extend %flex-row-center;
-            gap: $gaps/2;
+            gap: calc($gaps / 2);
 
             &__link {
                 @extend %flex-row-center;
