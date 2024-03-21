@@ -4,14 +4,14 @@ body {
   padding-right: calc(50% - 570px);
 }
 
-.footer__bottom__socials__link, .footer__bottom__socials, .footer__bottom, .footer__menu__sections, .footer__menu__logo_container, .subscriber__form__email_fields, .subscriber__teaser, .subscriber, .feature, .products__catalogue, .header__account-button, .header__main_menu, .header__drop_menu__summary, .header__search__container, .header__search, .header__top__right_block, .header__top__left_block, .header__top {
+.footer__bottom__socials__link, .footer__bottom__socials, .footer__bottom, .footer__menu__sections, .footer__menu__logo_container, .subscriber__form__email_fields, .subscriber__teaser, .subscriber, .product-slide, .breadcrumb__path, .breadcrumb, .feature, .products__catalogue, .header__account-button, .header__main_menu, .header__drop_menu__summary, .header__search__container, .header__search, .header__top__right_block, .header__top__left_block, .header__top {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
 
-.footer__menu__links, .footer, .subscriber__form, .subscriber__teaser__text, .products__product, .products, .header__drop_menu, .header, body {
+.footer__menu__links, .footer, .subscriber__form, .subscriber__teaser__text, .promo__photo-box, .products__product, .products, .header__drop_menu, .header, body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -416,6 +416,50 @@ body {
 .feature__box__description {
   font-size: 14px;
   font-weight: 300;
+}
+
+.breadcrumb {
+  width: 1600px;
+  padding: 20px 230px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 148px;
+  background-color: #f8f3f4;
+}
+.breadcrumb__path {
+  gap: 20px;
+  list-style: none;
+}
+
+.product-slide {
+  width: 1600px;
+  justify-content: space-between;
+  height: 777px;
+  background-color: #f7f7f7;
+}
+.product-slide__slider {
+  width: 47px;
+  height: 47px;
+  line-height: 47px;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(42, 42, 42, 0.14);
+}
+
+.promo__products-box {
+  width: 1140px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.promo__photo-box {
+  width: 100%;
+  height: 280px;
+  background-color: #e9e9e9;
+  justify-content: center;
+}
+.promo__product-photo {
+  max-height: 280px;
 }
 
 .subscriber {

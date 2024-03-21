@@ -478,6 +478,60 @@ body {
     }
 }
 
+.breadcrumb {
+    @extend %flex-row-center;
+    width: $maxWidth;
+    padding: $gaps $additionalVerge;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 148px;
+    background-color: #f8f3f4;
+
+    &__path {
+        @extend %flex-row-center;
+        gap: $gaps;
+        list-style: none;
+    }
+}
+
+.product-slide {
+    @extend %flex-row-center;
+    width: $maxWidth;
+    justify-content: space-between;
+    height: 777px;
+    background-color: #f7f7f7;
+
+    &__slider {
+        width: 47px;
+        height: 47px;
+        line-height: 47px;
+        text-align: center;
+        color: $textColorReserve;
+        background-color: rgba(42, 42, 42, 0.14);
+    }
+}
+
+.promo {
+    &__products-box {
+        width: $siteWidth;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $gaps;
+    }
+
+    &__photo-box {
+        @extend %flex-column-center;
+        width: 100%;
+        height: 280px;
+        background-color: #e9e9e9;
+        justify-content: center;
+    }
+
+    &__product-photo {
+        max-height: 280px;
+    }
+}
+
 .subscriber {
     @include broadSite($maxWidth, 438px, '../img/photo_subscribe.jpg');
     margin-bottom: calc($gaps * 3);
