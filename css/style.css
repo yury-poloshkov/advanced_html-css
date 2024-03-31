@@ -4,14 +4,14 @@ body {
   padding-right: calc(50% - 570px);
 }
 
-.footer__bottom__socials__link, .footer__bottom__socials, .footer__bottom, .footer__menu__sections, .footer__menu__logo_container, .subscriber__form__email_fields, .subscriber__teaser, .subscriber, .product-metrics__button, .product-metrics__box, .product-features, .product-slide, .breadcrumbs-path, .breadcrumbs, .feature, .products__catalogue, .header__account-button, .header__main_menu, .header__drop_menu__summary, .header__search__container, .header__search, .header__top__right_block, .header__top__left_block, .header__top {
+.footer__bottom__socials__link, .footer__bottom__socials, .footer__bottom, .footer__menu__sections, .footer__menu__logo_container, .subscriber__form__email_fields, .subscriber__teaser, .subscriber, .product-metrics__button, .product-metrics__box, .product-features, .product-slide, .breadcrumbs-path, .breadcrumbs, .feature__boxes_cat, .feature, .products__catalogue, .header__account-button, .header__main_menu, .header__drop_menu__summary, .header__search__container, .header__search, .header__top__right_block, .header__top__left_block, .header__top {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
 
-.footer__menu__links, .footer, .subscriber__form, .subscriber__teaser__text, .promo__photo-box, .promo, .product-metrics__block, .product-metrics, .product-card, .products__product, .products, .header__drop_menu, .header, body {
+.footer__menu__links, .footer, .subscriber__form, .subscriber__teaser__text, .promo__photo-box, .promo, .product-metrics__block, .product-metrics, .product-card, .feature__box_cat, .products__product, .products, .header__drop_menu, .header, body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,10 +29,6 @@ a {
 }
 a:hover {
   color: #f16d7f;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 .header {
@@ -179,6 +175,7 @@ body {
   border: 1px solid #e8e8e8;
   display: none;
   position: absolute;
+  z-index: 1000;
   top: 50px;
   left: 0;
   right: auto;
@@ -256,6 +253,9 @@ body {
   gap: 20px;
   margin-bottom: 60px;
 }
+.categories__banner:hover {
+  filter: brightness(70%);
+}
 .categories__banner__1 {
   grid-row-start: 1;
   grid-row-end: 3;
@@ -314,17 +314,33 @@ body {
 .products__product {
   align-items: start;
   width: 100%;
+  position: relative;
+}
+.products__product:hover {
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.products__product:hover .products__product__photo {
+  filter: brightness(30%);
+}
+.products__product:hover .add-box {
+  display: flex;
+  z-index: 100;
+}
+.products__product-link {
+  display: block;
 }
 .products__product__photo {
   width: 270px;
   height: 280px;
 }
 .products__product__title {
+  display: block;
   font-size: 13px;
   font-weight: 400;
   padding: 10px;
 }
 .products__product__price {
+  display: block;
   font-size: 16px;
   font-weight: 700;
   color: #f16d7f;
@@ -339,6 +355,37 @@ body {
   border: 0;
   gap: 10px;
   margin-bottom: 60px;
+}
+
+.add {
+  display: flex;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 10px;
+  align-items: center;
+  pointer-events: all;
+}
+.add-txt {
+  font-family: Lato;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+}
+.add-box {
+  position: absolute;
+  top: 98px;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+}
+.add:hover {
+  box-shadow: 0 0 10px 0 #fff;
+}
+
+.cart {
+  margin-right: 10px;
 }
 
 .feature {
@@ -377,6 +424,12 @@ body {
   width: 373px;
   background-image: url(../img/features_box_background.png);
 }
+.feature__boxes_cat {
+  width: 1600px;
+  height: 340px;
+  padding: 0 230px;
+  box-sizing: border-box;
+}
 .feature__box {
   max-height: 136.6666666667px;
   padding: 40px;
@@ -384,6 +437,10 @@ body {
   grid-template-rows: 25% 75%;
   grid-template-columns: 25% 75%;
   gap: 20px;
+}
+.feature__box_cat {
+  gap: 20px;
+  align-items: center;
 }
 .feature__box__logo {
   grid-row-start: 1;
@@ -398,6 +455,9 @@ body {
 .feature__box__description {
   font-size: 14px;
   font-weight: 300;
+}
+.feature__box__description_cat {
+  text-align: center;
 }
 
 .breadcrumbs {

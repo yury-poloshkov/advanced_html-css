@@ -7,11 +7,11 @@
     margin: 0;
     font-family: 'Lato', sans-serif;
     color: $textColorMain;
+    // box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
-
     &:hover {
         color: $textColorAlternative;
     }
@@ -19,7 +19,7 @@ a {
 body {
     @extend %center;
     @extend %flex-column-center;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 .header {
@@ -193,6 +193,7 @@ body {
     border: 1px solid #e8e8e8;
     display: none;
     position: absolute;
+    z-index: 1000;
     top: 50px;
     left: 0;
     right: auto;
@@ -277,6 +278,9 @@ body {
     margin-bottom: $gaps*3;
 
     &__banner {
+        &:hover{
+            filter: brightness(70%);
+        }
 
         &__1 {
             grid-row-start: 1;
@@ -353,6 +357,22 @@ body {
         @extend %flex-column-center;
         align-items: start;
         width: 100%;
+        position: relative;
+
+        &:hover{
+            box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.15);  
+        }
+        &:hover &__photo{
+            filter: brightness(30%);
+        }
+        &:hover .add-box {
+            display: flex;
+            z-index: 100;
+        }
+
+        &-link{
+            display: block;
+        }
 
         &__photo {
             width: calc(($siteWidth - $gaps * 3) / 4);
@@ -360,12 +380,14 @@ body {
         }
 
         &__title {
+            display: block;
             font-size: 13px;
             font-weight: 400;
             padding: calc($gaps / 2);
         }
 
         &__price {
+            display: block;
             font-size: 16px;
             font-weight: 700;
             color: $textColorAlternative;
@@ -386,12 +408,44 @@ body {
         margin-bottom: calc($gaps * 3);
     }
 }
+.add {
+    display: flex;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px;
+    align-items: center;
+    pointer-events: all;
+    
+    &-txt {
+    font-family: Lato;
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ffffff;
+    }
+    
+    &-box {
+        position: absolute;
+        top: 98px;
+        display: none;
+        justify-content: center;
+        width: 100%;
+        pointer-events: none;
+    }
+    
+    &:hover {
+        box-shadow: 0 0 10px 0 #fff;
+    } 
+}
+  
+.cart {
+    margin-right: 10px;
+}
 
 .feature {
     width: $siteWidth;
     @extend %flex-row-center;
     margin-bottom: $gaps*3;
-
     &__banner {
         height: 530px;
         width: 767px;
@@ -430,6 +484,14 @@ body {
         height: 530px;
         width: calc($siteWidth - 767px);
         background-image: url(../img/features_box_background.png);
+        &_cat {
+            @extend %flex-row-center;
+            width: $maxWidth;
+            height: 340px;
+            padding: 0 $additionalVerge;
+            box-sizing: border-box;
+        }
+
     }
 
     &__box {
@@ -439,6 +501,13 @@ body {
         grid-template-rows: 25% 75%;
         grid-template-columns: 25% 75%;
         gap: $gaps;
+        
+        &_cat{
+            @extend %flex-column-center;
+            gap: $gaps;
+            // padding: calc($gaps * 2);
+            align-items: center;
+        }
 
         &__logo {
             grid-row-start: 1;
@@ -456,6 +525,9 @@ body {
         &__description {
             font-size: 14px;
             font-weight: 300;
+            &_cat{
+                text-align: center;
+            }
         }
     }
 }
@@ -649,7 +721,6 @@ body {
 
     }
 }
-
 
 .promo {
     @extend %flex-column-center;
