@@ -635,8 +635,8 @@ body {
 
 
 .product{
-    position: relative;
-    min-height: 1500px;
+    @extend %flex-column-center;
+
     &-slide {
         @extend %flex-row-center;
         width: $maxWidth;
@@ -653,9 +653,7 @@ body {
         }
     }
     &-card{
-        position: absolute;
-        top: 700px;
-        left: $additionalVerge;
+        transform: translateY(-60px);
         width: $siteWidth;
         min-height: 730px;
         background-color: #ffffff;
@@ -663,7 +661,7 @@ body {
         box-sizing: border-box;
         @extend %flex-column-center;
         gap: $gaps;
-        padding: 72px $additionalVerge 122px;        
+        padding: 72px $additionalVerge 60px;        
     }
     &-group{
         font-size: 14px;
@@ -761,6 +759,8 @@ body {
             height: 35px;
             background-color: #ffffff;
             border: 1px solid #eaeaea;
+            padding: 0 $gaps;
+            box-sizing: border-box;
             &:focus{
                 outline: none;
             }
@@ -794,7 +794,7 @@ body {
 .promo {
     @extend %flex-column-center;
     gap: calc($gaps * 3.5);
-    padding: calc($gaps * 3.5) 0;
+    padding-bottom: calc($gaps * 3.5);
 
     &__title{
         font-size: 24px;
@@ -837,6 +837,9 @@ body {
             text-transform: uppercase;
             color: $textColorAlternative;
             padding: 0 calc($gaps / 2);
+        }
+        &:hover &-photo{
+            filter: brightness(70%);
         }
     }
     

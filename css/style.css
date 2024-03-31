@@ -11,7 +11,7 @@ body {
   align-items: center;
 }
 
-.cart__checkout, .cart__shipping, .footer__menu__links, .footer, .subscriber__form, .subscriber__teaser__text, .promo__photo-box, .promo, .product-metrics__block, .product-metrics, .product-card, .feature__box_cat, .products__product, .products, .header__chart-content, .header__drop_menu, .header, body {
+.cart__checkout, .cart__shipping, .footer__menu__links, .footer, .subscriber__form, .subscriber__teaser__text, .promo__photo-box, .promo, .product-metrics__block, .product-metrics, .product-card, .product, .feature__box_cat, .products__product, .products, .header__chart-content, .header__drop_menu, .header, body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -539,10 +539,6 @@ a:hover {
   color: #f16d7f;
 }
 
-.product {
-  position: relative;
-  min-height: 1500px;
-}
 .product-slide {
   width: 1600px;
   justify-content: space-between;
@@ -558,16 +554,14 @@ a:hover {
   background-color: rgba(42, 42, 42, 0.14);
 }
 .product-card {
-  position: absolute;
-  top: 700px;
-  left: 230px;
+  transform: translateY(-60px);
   width: 1140px;
   min-height: 730px;
   background-color: #ffffff;
   border: 1px solid #eaeaea;
   box-sizing: border-box;
   gap: 20px;
-  padding: 72px 230px 122px;
+  padding: 72px 230px 60px;
 }
 .product-group {
   font-size: 14px;
@@ -656,6 +650,8 @@ a:hover {
   height: 35px;
   background-color: #ffffff;
   border: 1px solid #eaeaea;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .product-metrics__select:focus {
   outline: none;
@@ -683,7 +679,7 @@ a:hover {
 
 .promo {
   gap: 70px;
-  padding: 70px 0;
+  padding-bottom: 70px;
 }
 .promo__title {
   font-size: 24px;
@@ -722,6 +718,9 @@ a:hover {
   text-transform: uppercase;
   color: #f16d7f;
   padding: 0 10px;
+}
+.promo__product:hover .promo__product-photo {
+  filter: brightness(70%);
 }
 
 .subscriber {
