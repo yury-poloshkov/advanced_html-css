@@ -7,7 +7,6 @@
     margin: 0;
     font-family: 'Lato', sans-serif;
     color: $textColorMain;
-    // box-sizing: border-box;
 }
 
 a {
@@ -36,6 +35,7 @@ body {
         &__left_block {
             @extend %flex-row-center;
             gap: $gaps;
+            position:relative;
         }
     }
 
@@ -137,6 +137,72 @@ body {
         @extend %flex-row-center;
         gap: calc($gaps / 2);
     }
+
+    &__top__right_block:hover &__chart-content{
+        display: flex;
+    }
+
+    &__chart-content{
+        position:absolute;
+        display: none;
+        top: 40px;
+        left: -20px;
+        @extend %flex-column-center;
+        justify-content: space-between;
+        padding: $gaps;
+        min-width: 262px;
+        min-height: 440px;
+        background-color: #ffffff;
+        border-radius: 5px;
+
+        &__product{
+            @extend %flex-row-center;
+            width: 100%;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(237,237,237,0.74);
+            
+            &-photo:hover{
+                filter: brightness(70%);
+            }
+
+            &-total{
+                width: 100%;
+                @extend %flex-row-center;               @extend %flex-row-center;
+                justify-content: space-between;
+            }
+
+            &-sum{
+                font-size: 12px;
+                line-height: 1.2;
+                font-weight: 400;
+                text-transform: uppercase;
+                color: #f16d7f;
+            }
+
+            &-totals{
+                font-size: 16px;
+                line-height: 1.2;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #222222;
+            }
+
+            &-button{
+                width: 262px;
+                height: 50px;
+                background-color: #ffffff;
+                border: 1px solid #eaeaea;
+                font-size: 14px;
+                font-weight: 700;
+                @extend %flex-row-center;
+                justify-content: center;
+            }
+        
+        }
+
+    }
+
 }
 
 .menu {
