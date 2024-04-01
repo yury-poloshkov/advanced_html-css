@@ -4,7 +4,7 @@ body {
   padding-right: calc(50% - 570px);
 }
 
-.catalogue, .cart__product-buttons, .checkout__forms-box, .footer__bottom__socials__link, .footer__bottom__socials, .footer__bottom, .footer__menu__sections, .footer__menu__logo_container, .subscriber__form__email_fields, .subscriber__teaser, .subscriber, .product-metrics__button, .product-metrics__box, .product-features, .product-slide, .breadcrumbs-path, .breadcrumbs, .feature__boxes_cat, .feature, .products__catalogue, .header__chart-content__product-button, .header__chart-content__product-total, .header__chart-content__product, .header__account-button, .header__main_menu, .header__drop_menu__summary, .header__search__container, .header__search, .header__top__right_block, .header__top__left_block, .header__top {
+.catalogue-pagination, .catalogue-filters__price-range, .catalogue-filters__sizes, .catalogue-filters__trends-box, .catalogue, .cart__product-buttons, .checkout__forms-box, .footer__bottom__socials__link, .footer__bottom__socials, .footer__bottom, .footer__menu__sections, .footer__menu__logo_container, .subscriber__form__email_fields, .subscriber__teaser, .subscriber, .product-metrics__button, .product-metrics__box, .product-features, .product-slide, .breadcrumbs-path, .breadcrumbs, .feature__boxes_cat, .feature, .products__catalogue, .header__chart-content__product-button, .header__chart-content__product-total, .header__chart-content__product, .header__account-button, .header__main_menu, .header__drop_menu__summary, .header__search__container, .header__search, .header__top__right_block, .header__top__left_block, .header__top {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -1174,6 +1174,7 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   box-sizing: border-box;
+  margin-bottom: 40px;
 }
 .catalogue-filters__title {
   font-size: 14px;
@@ -1183,7 +1184,43 @@ a:hover {
   color: #6f6e6e;
   padding: 16px 0;
 }
-.catalogue-filters__trend-options {
+.catalogue-filters__trends-box {
+  flex-wrap: wrap;
+}
+.catalogue-filters__trends-options {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #6f6e6e;
+  padding-right: 10px;
+}
+.catalogue-filters__trends-options:not(:last-of-type)::after {
+  content: "|";
+  padding-left: 10px;
+}
+.catalogue-filters__sizes {
+  flex-wrap: wrap;
+}
+.catalogue-filters__sizes-box {
+  width: 25%;
+}
+.catalogue-filters__size {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #6f6e6e;
+  margin-left: 8px;
+}
+.catalogue-filters__price-slider {
+  width: 100%;
+  accent-color: #f16d7f;
+}
+.catalogue-filters__price-range {
+  justify-content: space-between;
+}
+.catalogue-filters__price-value {
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
@@ -1195,4 +1232,70 @@ a:hover {
   height: 50px;
   background-color: #f3f3f3;
   margin: 40px 0;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.catalogue-sorting__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 153px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+.catalogue-sorting__text {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #6f6e6e;
+  padding-left: 8px;
+}
+.catalogue-sorting__text-selector {
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.catalogue-sorting__text-selector:focus {
+  outline: none;
+}
+.catalogue-pagination {
+  grid-column: span 2;
+  width: 261px;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  justify-content: space-around;
+}
+.catalogue-pagination__item {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #c4c4c4;
+  padding: auto 0;
+  cursor: pointer;
+}
+.catalogue-pagination__item:hover {
+  color: #f16d7f;
+}
+.catalogue-forwarder {
+  width: 150px;
+  height: 44px;
+  background-color: #f16d7f;
+  color: #ffffff;
+  border: 1px solid #f16d7f;
+  border-radius: 3px;
+  justify-self: right;
+}
+.catalogue-forwarder:hover {
+  background-color: #ffffff;
+  color: #f16d7f;
 }/*# sourceMappingURL=style.css.map */

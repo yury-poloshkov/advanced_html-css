@@ -340,7 +340,7 @@
     </section>
     <section class="catalogue">
         <nav class="catalogue-menu">
-            <details class="catalogue-menu__section">
+            <details open class="catalogue-menu__section">
                 <summary class="catalogue-menu__title">CATEGORY</summary>
                 <a href="#" class="catalogue-menu__item">Bags</a>
                 <a href="#" class="catalogue-menu__item">Denim</a>
@@ -390,27 +390,56 @@
             </details>
         </nav>
         <section class="catalogue-box">
-            <!-- <section class="catalogue-filters"> -->
-                <nav class="catalogue-filters__trends">
-                    <h4 class="catalogue-filters__title">Trending now</h4>
-                    <p class="catalogue-filters__trends-options">Bohemian    |    Floral    |    Lace 
-                        Floral    |    Lace    |    Bohemian</p>
-                </nav>
-                <nav class="catalogue-filters__sizes">
-                    <h4 class="catalogue-filters__title">Size</h4>
-                    <p class="catalogue-filters__trends-options">Bohemian    |    Floral    |    Lace 
-                        Floral    |    Lace    |    Bohemian</p>
-
-                </nav>
-                <div class="catalogue-filters__price">
-                    <h4 class="catalogue-filters__title">pRICE</h4>
-                    <p class="catalogue-filters__trends-options">Bohemian    |    Floral    |    Lace 
-                        Floral    |    Lace    |    Bohemian</p>
-
+            <nav class="catalogue-filters__trends">
+                <h4 class="catalogue-filters__title">Trending now</h4>
+                <div class="catalogue-filters__trends-box">
+                    <p class="catalogue-filters__trends-options">Bohemian</p>
+                    <p class="catalogue-filters__trends-options">Floral</p>
+                    <p class="catalogue-filters__trends-options">Lace</p>
+                    <p class="catalogue-filters__trends-options">Floral</p>
+                    <p class="catalogue-filters__trends-options">Lace</p>
+                    <p class="catalogue-filters__trends-options">Bohemian</p>
                 </div>
-            <!-- </section> -->
-            <div class="catalogue-sorting">
+            </nav>
+            <nav class="catalogue-filters__sizing">
+                <h4 class="catalogue-filters__title">Size</h4>
+                <div class="catalogue-filters__sizes">
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb1"><label class="catalogue-filters__size" for="chb1">XXS</label></div>
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb2"><label class="catalogue-filters__size" for="chb2">XS</label></div>
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb3"><label class="catalogue-filters__size" for="chb3">S</label></div>
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb4"><label class="catalogue-filters__size" for="chb4">M</label></div>
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb5"><label class="catalogue-filters__size" for="chb5">L</label></div>
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb6"><label class="catalogue-filters__size" for="chb6">XL</label></div>
+                    <div class="catalogue-filters__sizes-box"><input type="checkbox" name="" id="chb7"><label class="catalogue-filters__size" for="chb7">XXL</label></div>
+                </div>
 
+            </nav>
+            <div class="catalogue-filters__price">
+                <h4 class="catalogue-filters__title">PRICE</h4>
+                <input class="catalogue-filters__price-slider" type="range" name="" id="" min="0" max="100">
+                <div class="catalogue-filters__price-range">
+                    <p class="catalogue-filters__price-value">$52</p>
+                    <p class="catalogue-filters__price-value">$400</p>
+                </div>
+
+            </div>
+            <div class="catalogue-sorting">
+                <form class="catalogue-sorting__form">
+                    <label class="catalogue-sorting__text" for="catalogue-sorting">Sort By</label>
+                    <select class="catalogue-sorting__text-selector" name="" id="catalogue-sorting">
+                        <option value="name">Name</option>
+                        <option value="size">Size</option>
+                        <option value="color">Color</option>
+                    </select>
+                </form>
+                <form class="catalogue-sorting__form">
+                    <label class="catalogue-sorting__text" for="catalogue-sorting">Show</label>
+                    <select class="catalogue-sorting__text-selector" name="" id="catalogue-sorting">
+                        <option value="9">9</option>
+                        <option value="15">15</option>
+                        <option value="21">21</option>
+                    </select>
+                </form>
             </div>
             <article class="products__product">
                 <a class="products__product-link" href="single_page.html">
@@ -529,6 +558,18 @@
                     </a>
                 </div>
             </article>
+
+            <nav class="catalogue-pagination">
+                <p class="catalogue-pagination__item">❮</p>
+                <p class="catalogue-pagination__item">1</p>
+                <p class="catalogue-pagination__item">2</p>
+                <p class="catalogue-pagination__item">3</p>
+                <p class="catalogue-pagination__item">4</p>
+                <p class="catalogue-pagination__item">5</p>
+                <p class="catalogue-pagination__item">6...20</p>
+                <p class="catalogue-pagination__item">❯</p>
+            </nav>
+            <button type="submit" class="catalogue-forwarder">View All</button>
         </section>
     </section>
     <div class="feature__boxes feature__boxes_cat">
